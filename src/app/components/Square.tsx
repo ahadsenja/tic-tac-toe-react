@@ -1,9 +1,9 @@
+'use client'
 import React from 'react'
+import { SquareIface } from "../interface/GameIface";
 
-function Square({value, onSquareClick}) {
-  return (
-    <button className='border w-10 h-10' onClick={onSquareClick}>X</button>
-  )
+function Square({ value, onSquareClicked }: SquareIface) {
+  return <button className='square' onClick={onSquareClicked}>{value}</button>
 }
 
 export default Square
