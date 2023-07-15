@@ -9,11 +9,7 @@ function Board({ xIsNext, squares, onPlay }: BoardIface) {
       return;
     }
     const nextSquares = squares.slice();
-    if (xIsNext) {
-      nextSquares[i] = "X";
-    } else {
-      nextSquares[i] = "O";
-    }
+    xIsNext ? nextSquares[i] = "X" : nextSquares[i] = "O";  
     onPlay(nextSquares);
   }
 
@@ -25,7 +21,7 @@ function Board({ xIsNext, squares, onPlay }: BoardIface) {
     status = "Next player: " + (xIsNext ? "X" : "O");
   }
 
-  function calculateWinner(squares: any) {
+  function calculateWinner(squares: string[]) {
     const lines = [
       [0, 1, 2],
       [3, 4, 5],
@@ -47,6 +43,7 @@ function Board({ xIsNext, squares, onPlay }: BoardIface) {
 
   return (
     <div>
+      TODO: Need to be improved, so this code will be more efficient and readable
       <div>{status}</div>
       <div className='board-row'>
        <Square value={squares[0]} onSquareClicked={() => handleClick(0)} />
