@@ -1,5 +1,5 @@
-'use client'
-import Game from './components/Game'
+"use client";
+import Game from "./components/Game";
 
 export default function Home() {
   return (
@@ -7,5 +7,5 @@ export default function Home() {
       <h1>Tic Tac Toe Game Exercise with Nextjs</h1>
       <Game />
     </main>
-  )
+  );
 }
